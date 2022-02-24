@@ -36,7 +36,32 @@ public class DiagonalGame {
         panel1.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                double w = 0;
+                double k = Integer.MAX_VALUE;
+            for (int i = 0; i < 500; i ++){
+                w = Math.sqrt(Math.pow(e.getX() - i, 2) + Math.pow(e.getY() - i, 2));
+                if ( w < k){
+                    k = w;
+                }
+            }
+            if (k > 20){
+                field1.setText("bad!");
+            }
+            else if ((k > 10)&&(k < 20)){
+                field1.setText("Okay!");
+            }
+            else if ((k > 5)&&(k < 10)){
+                field1.setText("Good!");
+            }
+            else if ((k > 3)&&(k < 5)){
+                field1.setText("Great!");
+            }
+            else if ((k > 1)&&(k < 2)){
+                field1.setText("Excellent!");
+            }
+            else if (k == 0){
+                field1.setText("Perfect!");
+            }
             }
 
             @Override
