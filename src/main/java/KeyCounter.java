@@ -26,10 +26,29 @@ public class KeyCounter {
         frame.add(button1);
         frame.add(field2);
 
+        field1.addKeyListener(new KeyListener() {
+          @Override
+          public void keyTyped(KeyEvent e) {
+              w = w +1;
+              // field1.setText(field1.getText()+ e.getKeyChar());
+
+          }
+
+          @Override
+          public void keyPressed(KeyEvent e) {
+          }
+
+          @Override
+          public void keyReleased(KeyEvent e) {
+              field2.setText(("" + w));
+
+          }
+                              });
+
         button1.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
-            w = w +1;
+
             }
 
             @Override
